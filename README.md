@@ -79,10 +79,10 @@ To get a local copy up and running, follow these steps:
 
 ## Screenshots
 ### Home Page
-![Home Page](static/screenshots/home_page.png)
+![Home Page](screenshots/home_page.jpg)
 
 ### Prediction Result
-![Prediction Result](static/screenshots/result_page.png)
+![Prediction Result](screenshots/result_page.jpg)
 
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
