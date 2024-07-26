@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="../styles.css">
+    {% comment %} <style> {% endcomment %}
+        {% comment %} body {
+            background-image: url('{{ url_for('static', filename='wdd-consultant-laptop.png') }}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 105% 90%;
+            margin: 0; /* Reset default body margin */
+            font-family: Arial, sans-serif;
+            padding-bottom: 60px; /* Ensure space for the footer */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ensure relative positioning */
+            z-index: 1; /* Ensure form is above footer */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto 20px; /* Added margin bottom to create space below form */
+            position: relative; /* Ensure relative positioning */
+            z-index: 1; /* Ensure form is above footer */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Added margin bottom to create space below button */
+            position: relative; /* Ensure relative positioning */
+            z-index: 1; /* Ensure button is above footer */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0; /* Increased padding for more space */
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 0; /* Ensure footer is behind content */
+        }
+    </style> {% endcomment %}
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <i>
+            <u>Diabetes Prediction</U>
+            </i>
+        </h1>
+        <form id="predictionForm" action="/predict" method="post">
+            <label for="pregnancies">Number of Pregnancies:</label>
+            <input type="number" id="pregnancies" name="pregnancies" required><br>
+
+            <label for="glucose">Glucose Level:</label>
+            <input type="number" id="glucose" name="glucose" required><br>
+
+            <label for="bloodPressure">Blood Pressure:</label>
+            <input type="number" id="bloodPressure" name="bloodPressure" required><br>
+
+            <label for="skinThickness">Skin Thickness:</label>
+            <input type="number" id="skinThickness" name="skinThickness" required><br>
+
+            <label for="insulin">Insulin Level:</label>
+            <input type="number" id="insulin" name="insulin" required><br>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" step="0.1" id="bmi" name="bmi" required><br>
+
+            <label for="dpf">Diabetes Pedigree Function:</label>
+            <input type="number" step="0.01" id="dpf" name="dpf" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result">
+            <p>{{ result }}</p>
+
+
+        </div>
+    </div>
+    
+    <footer>
+        <p>Copyright © 2024 All rights reserved | This Diabetes website  is Created or Developed by kunalgautam.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

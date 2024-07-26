@@ -17,18 +17,18 @@ diabetes_dataset.groupby('Outcome').mean()
 # separating the data and labels
 X = diabetes_dataset.drop(columns = 'Outcome', axis=1)
 Y = diabetes_dataset['Outcome']
-print(X)
-print(Y)
+# print(X)
+# print(Y)
 scaler = StandardScaler()
 scaler.fit(X)
 standardized_data = scaler.transform(X)
-print(standardized_data)
+#print(standardized_data)
 X = standardized_data
 Y = diabetes_dataset['Outcome']
-print(X)
-print(Y)
+# print(X)
+# print(Y)
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, stratify=Y, random_state=2)
-print(X.shape, X_train.shape, X_test.shape)
+# print(X.shape, X_train.shape, X_test.shape)
 classifier = svm.SVC(kernel='linear')
 #training the support vector Machine Classifier
 classifier.fit(X_train, Y_train)
